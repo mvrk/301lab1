@@ -1,8 +1,7 @@
 import React from "react";
 import Header from './Header.js';
-import Main from '/Main.js'
-import '/App.js';
-import { render } from "@testing-library/react";
+import Main from './Main.js';
+import './App.js';
 
 class App extends React.Component {
 
@@ -11,7 +10,7 @@ class App extends React.Component {
       <>
         <Header/>
         <Main/>
-        <footer>Rui Guo@ Code Fellows 2022<footer/>
+        <footer>Rui Guo@ Code Fellows 2022</footer>
       </>
     );
   }
