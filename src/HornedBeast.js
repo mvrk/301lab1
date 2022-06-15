@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'react-bootstrap/Image'
 import './HornedBeast.css'
 
 class HornedBeast extends React.Component {
