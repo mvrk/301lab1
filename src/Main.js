@@ -1,16 +1,30 @@
 import React from 'react';
 import HornedBeast from './HornedBeast.js';
+import data from './data.json';
+import './Main.css';
 
 class Main extends React.Component {
   render() {
+    let hBeast = [];
+    data.forEach((hornedBeast, index) => {
+      hBeast.push(
+        <HornedBeast
+          _id={hornedBeast._id}
+          image_url={hornedBeast.image_url}
+          title={hornedBeast.title}
+          description={hornedBeast.description}
+          keyword={hornedBeast.keyword}
+          horns={hornedBeast.horns}
+          key={index}
+        />
+      )
+    })
     return (
       <main>
-        <HornedBeast
-          title="Rhino Family" imageUrl="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg" description="Parent rhino with two babies"
-        />
-        <HornedBeast
-          title="Unicorn Head" imageUrl="https://www.dhresource.com/0x0s/f2-albu-g5-M00-1A-11-rBVaI1hsIIiALxKzAAIHjSU3VkE490.jpg/wholesale-halloween-costume-prop-unicorn.jpg" description="Someone wearing a very silly unicorn head mask."
-        />
+        {hBeast}
+        <HornedBeast />
+
+
       </main>
     )
   }
