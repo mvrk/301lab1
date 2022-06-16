@@ -5,13 +5,15 @@ import Footer from './Footer.js';
 import Modal from 'react-bootstrap/Modal';
 import data from './data.json';
 import './App.js';
+import SelectedBeast from "./SelectedBeast.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      selectedBeast: ''
+      selectedBeast: '',
+      description: ''
     };
   };
 
@@ -20,10 +22,11 @@ class App extends React.Component {
       showModal: false
     });
   };
-  handleOnShowModal = (keyword) => {
+  handleOnShowModal = (beast, descrip) => {
     this.setState({
       showModal: true,
-      selectedBeast: keyword
+      selectedBeast: beast,
+      description: descrip
     });
   };
 
@@ -36,16 +39,13 @@ class App extends React.Component {
           data={data}
           handleOnShowModal={this.handleOnShowModal}
         />
-        <Modal
-          show={this.state.showModal}
+        <Footer />
+        <SelectedBeast
+          showModal={this.state.showModal}
           onHide={this.handleOnHide}
-        >
-          <Footer />
-          <Modal.Header closeButton>
-            <Modal.Title>{this.state.selectedBeast}</Modal.Title>
-          </Modal.Header>
-        </Modal>
-
+          selectedBeast={this.state.selectedBeast}
+          description={this.state.description}
+        />
       </>
     );
   }

@@ -10,8 +10,8 @@ class HornedBeast extends React.Component {
     super(props);
     this.state = {
       votes: 0
-    }
-  }
+    };
+  };
   handleVotes = () => {
     this.setState({
       votes: this.state.votes + 1,
@@ -19,13 +19,13 @@ class HornedBeast extends React.Component {
   };
 
   handleHeadlineClick = () => {
-    this.props.handleOnShowModal(this.props.keyword);
+    this.props.handleOnShowModal(this.props.image_url, this.props.description);
   }
 
   render() {
     return (
       <article>
-        <h3 onClick={this.handleHeadlineClick}>{this.props.keyword}</h3>
+        <h3 >{this.props.keyword}</h3>
         <p>❤️ {this.state.votes}</p><br />
         <p onClick={this.handleVotes}>Click here to vote for me</p>
         <img
