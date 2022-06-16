@@ -12,7 +12,6 @@ class HornedBeast extends React.Component {
   handleVotes = () => {
     this.setState({
       votes: this.state.votes + 1,
-      greeting: 'Hello!'
     });
   };
   render() {
