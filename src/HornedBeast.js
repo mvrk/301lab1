@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'react-bootstrap/Image'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
 import './HornedBeast.css'
 
 class HornedBeast extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      votes:0
+      votes: 0
     }
   }
   handleVotes = () => {
@@ -14,11 +17,16 @@ class HornedBeast extends React.Component {
       votes: this.state.votes + 1,
     });
   };
+
+  handleHeadlineClick = () => {
+    this.props.handleOnShowModal(this.props.keyword);
+  }
+
   render() {
     return (
       <article>
-        <h3>{this.props.keyword}</h3>
-        <p>❤️ {this.state.votes}</p><br/>
+        <h3 onClick={this.handleHeadlineClick}>{this.props.keyword}</h3>
+        <p>❤️ {this.state.votes}</p><br />
         <p onClick={this.handleVotes}>Click here to vote for me</p>
         <img
           src={this.props.image_url}
