@@ -22,11 +22,11 @@ class App extends React.Component {
       showModal: false
     });
   };
-  handleOnShowModal = (beast, descrip) => {
+  handleOnShowModal = (hornedBeast) => {
     this.setState({
       showModal: true,
-      selectedBeast: beast,
-      description: descrip
+      selectedBeast: hornedBeast,
+      
     });
   };
 
@@ -38,11 +38,12 @@ class App extends React.Component {
         <Main
           data={data}
           handleOnShowModal={this.handleOnShowModal}
+          handleOnHide={this.handleOnHide}
         />
         <Footer />
         <SelectedBeast
           showModal={this.state.showModal}
-          onHide={this.handleOnHide}
+          handleOnHide={this.handleOnHide}
           selectedBeast={this.state.selectedBeast}
           description={this.state.description}
         />

@@ -29,11 +29,12 @@ class HornedBeast extends React.Component {
         <p>❤️ {this.state.votes}</p><br />
         <p onClick={this.handleVotes}>Click here to vote for me</p>
         <img
-          src={this.props.image_url}
-          alt={this.props.text}
-          title={this.props.title}
+          src={this.props.hornedBeast.image_url}
+          alt={this.props.hornedBeast.description}
+          title={this.props.hornedBeast.title}
+          onClick={() => { this.props.openModal(this.props.hornedBeast) }}
         />
-        <p>{this.props.description}</p>
+        <p>{this.props.hornedBeast.description}</p>
       </article>
     )
   }
