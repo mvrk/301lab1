@@ -4,7 +4,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <h1>Lab: Class 01</h1>
+        <h1>Gallery of Horns</h1>
       </header>
     );
   }
