@@ -19,7 +19,7 @@ class HornedBeast extends React.Component {
   };
 
   handleHeadlineClick = () => {
-    this.props.handleOnShowModal(this.props.image_url, this.props.description);
+    this.props.handleOnShowModal(this.props.image_url, this.props.description, this.props.horns);
   }
 
   render() {
@@ -32,6 +32,7 @@ class HornedBeast extends React.Component {
           src={this.props.hornedBeast.image_url}
           alt={this.props.hornedBeast.description}
           title={this.props.hornedBeast.title}
+          horns={this.props.hornedBeast.horns}
           onClick={() => { this.props.openModal(this.props.hornedBeast) }}
         />
         <p>{this.props.hornedBeast.description}</p>
