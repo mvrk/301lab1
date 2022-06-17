@@ -43,7 +43,10 @@ class App extends React.Component {
 
   handleSelect = (event) => {
     event.preventDefault();
-    let selected = event.target.value;
+    console.log(event);
+    console.log(parseInt(event.target.value));
+    console.log(event.target.value);
+    let selected = parseInt(event.target.value);
 
     if (selected === 1) {
       let newData = data.filter(hornedBeast => hornedBeast.horns === 1);
@@ -80,18 +83,20 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <Form.Group>
-          <h2>Horn numbers</h2>
-          <Form.Select name="selected" onChange={this.handleSelect}>
-            <option value="all">All</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="100">100</option>
-          </Form.Select>
-        </Form.Group>
+        <Form>
+          <Form.Group>
+            <h2>Horn numbers</h2>
+            <Form.Select name="praseInt(selected)" onChange={this.handleSelect}>
+              <option value="all">All</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="100">100</option>
+            </Form.Select>
+          </Form.Group>
+        </Form>
         <Main
-          data={this.state.data}
+          data={this.state.sortedData}
           handleOnShowModal={this.handleOnShowModal}
           handleOnHide={this.handleOnHide}
         />
