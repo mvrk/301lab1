@@ -32,7 +32,6 @@ class HornedBeast extends React.Component {
           <Card.Text>
             {this.state.votes} ❤️ likes
           </Card.Text>
-          <p onClick={this.handleVotes}>Click here to vote for me</p>
           <Card.Img
             src={this.props.hornedBeast.image_url}
             alt={this.props.hornedBeast.description}
@@ -40,7 +39,7 @@ class HornedBeast extends React.Component {
             horns={this.props.hornedBeast.horns}
             onClick={() => { this.props.openModal(this.props.hornedBeast) }}
           />
-           <Button className="mt-3" variant="primary" onClick={this.handleVotes}>I like it!</Button>
+           <Button className="mt-3" variant="outline-success" onClick={this.handleVotes}>I like it!</Button>
           <p>{this.props.hornedBeast.description}</p>
 
           <Card.Body>
