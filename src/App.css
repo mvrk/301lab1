@@ -4,4 +4,23 @@ body {
 
 h1 {
   font-size: 5vw;
+  font-family: cursive;
+  height: 85px;
+  padding: 15px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.header-container {
+
+  font-family: cursive;
+  height: 85px;
+  padding: 15px;
+  text-align: center;
+  justify-content: space-between;
+
+}
+
+.App {
+  text-align: center;
 }
