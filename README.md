@@ -1,3 +1,4 @@
+
 ## This is a React app: Gallery of Horns
 
 ### lab 2 
@@ -36,3 +37,4 @@ Start time: ___4:00 pm__
 Finish time: next day__
 
 Actual time needed to complete: __3+ hours. 
+
