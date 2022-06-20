@@ -7,6 +7,7 @@ import data from './data.json';
 import './App.js';
 import SelectedBeast from "./SelectedBeast.js";
 import { Form, Button, ListGroup } from 'react-bootstrap';
+import './Form.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -83,8 +84,8 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <Form>
-          <Form.Group>
+        <Form className="form-container">
+          <Form.Group className="group-container">
             <h2>Horn numbers</h2>
             <Form.Select name="praseInt(selected)" onChange={this.handleSelect}>
               <option value="all">All</option>
