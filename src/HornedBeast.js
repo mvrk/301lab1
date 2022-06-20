@@ -18,25 +18,37 @@ class HornedBeast extends React.Component {
     });
   };
 
-  handleHeadlineClick = () => {
+  handleImgClick = () => {
     this.props.handleOnShowModal(this.props.image_url, this.props.description, this.props.horns);
   }
 
   render() {
     return (
-      <article>
-        <h3 >{this.props.keyword}</h3>
-        <p>❤️ {this.state.votes}</p><br />
-        <p onClick={this.handleVotes}>Click here to vote for me</p>
-        <img
-          src={this.props.hornedBeast.image_url}
-          alt={this.props.hornedBeast.description}
-          title={this.props.hornedBeast.title}
-          horns={this.props.hornedBeast.horns}
-          onClick={() => { this.props.openModal(this.props.hornedBeast) }}
-        />
-        <p>{this.props.hornedBeast.description}</p>
-      </article>
+      <Col className="mt-4">
+        <Card style={{ width: '15rem' }} className="h-100 p-3 card-container">
+          <Card.Title>
+            {this.props.title}
+          </Card.Title>
+          <Card.Text>
+            {this.state.votes} ❤️ likes
+          </Card.Text>
+          <Card.Img
+            src={this.props.hornedBeast.image_url}
+            alt={this.props.hornedBeast.description}
+            title={this.props.hornedBeast.title}
+            horns={this.props.hornedBeast.horns}
+            onClick={() => { this.props.openModal(this.props.hornedBeast) }}
+          />
+           <Button className="mt-3" variant="outline-success" onClick={this.handleVotes}>I like it!</Button>
+          <p>{this.props.hornedBeast.description}</p>
+
+          <Card.Body>
+            <Card.Text>
+              {this.props.description}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Col >
     )
   }
 }
